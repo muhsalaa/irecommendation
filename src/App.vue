@@ -1,28 +1,73 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="flex">
+    <div class="flex top-0 w-full h-16 items-center px-4 fixed bg-green-400">
+        <i
+          class="text-white text-center text-3xl cursor-pointer block"
+          @click="toggleSideBar"
+          :class="[active ? 'fa fa-times' : 'fa fa-bars']"
+        ></i>
+    </div>
+    <div class="bg-white h-screen overflow-y-auto w-64 inline-block" :class="[active ? '' : 'hidden']">
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+      <p>asdasdasd</p>
+    </div>
+    <div
+      class="inline-block w-full h-screen overflow-y-auto"
+      :class="{'w-full': !active}"
+    >
+      <div class="sm:px-16">
+        <div class="h-screen w-full bg-red-200"></div>
+        <div class="h-screen w-full bg-red-200"></div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import sideBar from "./components/Sidebar";
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      active: true
+    };
   },
+  methods: {
+    toggleSideBar() {
+      this.active = !this.active;
+    }
+  },
+  components: {
+    sideBar
+  }
 };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
